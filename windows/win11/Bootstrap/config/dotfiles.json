@@ -1,0 +1,40 @@
+{
+  "repository": "https://github.com/PicoLuetjens/dotfiles.git",
+  "clonePath": "{UserProfile}\\dotfiles",
+
+  "items":
+  [
+    {
+      "name": "WezTerm",
+      "source": ".wezterm.lua",
+      "target": "{UserProfile}\\.wezterm.lua"
+    },
+    {
+      "name": "PowerShell Profil",
+      "source": "Microsoft.PowerShell_profile.ps1",
+      "target": "{Documents}\\WindowsPowerShell\\Microsoft.PowerShell_profile.ps1"
+    },
+    {
+      "name": "Superfile",
+      "source": "superfile",
+      "target": "{LocalAppData}\\superfile"
+    },
+    {
+      "name": "Neovim",
+      "source": "nvim",
+      "target": "{LocalAppData}\\nvim"
+    },
+    {
+      "name": "LibreWolf Policies",
+      "source": "mf-base\\policies.json",
+      "target": "{ProgramFiles}\\LibreWolf\\distribution\\policies.json",
+      "mode": "merge-json",
+      "requires": "{ProgramFiles}\\LibreWolf"
+    }
+  ],
+
+  "manual":
+  [
+    "Tabliss: In LibreWolf Tabliss-Einstellungen öffnen -> Import -> {ClonePath}\\mf-base\\tabliss.json"
+  ]
+}
