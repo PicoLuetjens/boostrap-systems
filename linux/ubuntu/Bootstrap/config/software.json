@@ -1,0 +1,179 @@
+{
+  "software": [
+    {
+      "name": "Git",
+      "type": "apt",
+      "packages": ["git"]
+    },
+    {
+      "name": "Build Tools (gcc, make)",
+      "type": "apt",
+      "packages": ["build-essential"]
+    },
+    {
+      "name": "Zsh",
+      "type": "apt",
+      "packages": ["zsh"]
+    },
+    {
+      "name": "Oh My Zsh",
+      "type": "script",
+      "url": "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh",
+      "args": ["--unattended", "--keep-zshrc"],
+      "check_path": "{home}/.oh-my-zsh/oh-my-zsh.sh"
+    },
+    {
+      "name": "Powerlevel10k",
+      "type": "git",
+      "url": "https://github.com/romkatv/powerlevel10k.git",
+      "dest": "{home}/.oh-my-zsh/custom/themes/powerlevel10k"
+    },
+    {
+      "name": "zsh-autosuggestions",
+      "type": "git",
+      "url": "https://github.com/zsh-users/zsh-autosuggestions.git",
+      "dest": "{home}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
+    },
+    {
+      "name": "zsh-syntax-highlighting",
+      "type": "git",
+      "url": "https://github.com/zsh-users/zsh-syntax-highlighting.git",
+      "dest": "{home}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
+    },
+    {
+      "name": "Kitty",
+      "type": "script",
+      "url": "https://sw.kovidgoyal.net/kitty/installer.sh",
+      "args": ["launch=n"],
+      "check": "kitty",
+      "check_path": "{home}/.local/kitty.app/bin/kitty",
+      "post": [
+        "ln -sf {home}/.local/kitty.app/bin/kitty {home}/.local/kitty.app/bin/kitten {home}/.local/bin/",
+        "mkdir -p {home}/.local/share/applications && cp {home}/.local/kitty.app/share/applications/kitty.desktop {home}/.local/kitty.app/share/applications/kitty-open.desktop {home}/.local/share/applications/",
+        "sed -i 's|Icon=kitty|Icon={home}/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g; s|Exec=kitty|Exec={home}/.local/kitty.app/bin/kitty|g' {home}/.local/share/applications/kitty*.desktop",
+        "mkdir -p {home}/.config && echo 'kitty.desktop' > {home}/.config/xdg-terminals.list",
+        "sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator {home}/.local/kitty.app/bin/kitty 50 && sudo update-alternatives --set x-terminal-emulator {home}/.local/kitty.app/bin/kitty"
+      ]
+    },
+    {
+      "name": "Jetbrains Nerdfont",
+      "type": "font",
+      "url": "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz",
+      "dest": "{home}/.local/share/fonts/JetBrainsMonoNerdFont"
+    },
+    {
+      "name": "Only Office",
+      "type": "deb",
+      "package": "onlyoffice-desktopeditors",
+      "url": "https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb"
+    },
+    {
+      "name": "7-Zip",
+      "type": "apt",
+      "packages": ["7zip"]
+    },
+    {
+      "name": "Discord",
+      "type": "deb",
+      "package": "discord",
+      "url": "https://discord.com/api/download?platform=linux&format=deb"
+    },
+    {
+      "name": "Docker Engine",
+      "type": "apt-repo",
+      "key": "https://download.docker.com/linux/ubuntu/gpg",
+      "uris": "https://download.docker.com/linux/ubuntu",
+      "suites": "{codename}",
+      "components": "stable",
+      "packages": [
+        "docker-ce",
+        "docker-ce-cli",
+        "containerd.io",
+        "docker-buildx-plugin",
+        "docker-compose-plugin"
+      ],
+      "groups": ["docker"]
+    },
+    {
+      "name": "Superfile",
+      "type": "script",
+      "url": "https://superfile.dev/install.sh",
+      "check": "spf",
+      "env": {
+        "SPF_INSTALL_VERSION": "{latest-tag:yorukot/superfile}"
+      }
+    },
+    {
+      "name": "Neovim",
+      "type": "archive",
+      "url": "https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz",
+      "dest": "/opt/nvim",
+      "links": {
+        "/usr/local/bin/nvim": "bin/nvim"
+      },
+      "check": "nvim"
+    },
+    {
+      "name": "Neovim Tools (Clipboard, Entpacken)",
+      "type": "apt",
+      "packages": ["wl-clipboard", "xclip", "unzip"]
+    },
+    {
+      "name": "ripgrep",
+      "type": "deb",
+      "package": "ripgrep",
+      "url": "https://github.com/BurntSushi/ripgrep/releases/download/{latest-tag:BurntSushi/ripgrep}/ripgrep_{latest-tag:BurntSushi/ripgrep}-1_amd64.deb"
+    },
+    {
+      "name": "Treesitter",
+      "type": "binary",
+      "url": "https://github.com/tree-sitter/tree-sitter/releases/latest/download/tree-sitter-linux-x64.gz",
+      "dest": "/usr/local/bin/tree-sitter",
+      "check": "tree-sitter"
+    },
+    {
+      "name": "UV",
+      "type": "script",
+      "url": "https://astral.sh/uv/install.sh",
+      "check": "uv"
+    },
+    {
+      "name": "Python",
+      "type": "apt",
+      "packages": ["python3", "python3-venv", "python3-pip"]
+    },
+    {
+      "name": "Volta",
+      "type": "script",
+      "url": "https://get.volta.sh",
+      "check": "volta"
+    },
+    {
+      "name": "Go",
+      "type": "archive",
+      "url": "https://go.dev/dl/{latest-go}.linux-amd64.tar.gz",
+      "dest": "/usr/local/go",
+      "links": {
+        "/usr/local/bin/go": "bin/go",
+        "/usr/local/bin/gofmt": "bin/gofmt"
+      },
+      "check": "go"
+    },
+    {
+      "name": "Just",
+      "type": "script",
+      "url": "https://just.systems/install.sh",
+      "args": ["--to", "{home}/.local/bin", "--tag", "{latest-tag:casey/just}"],
+      "check": "just"
+    },
+    {
+      "name": "Librewolf",
+      "type": "apt-repo",
+      "key": "https://repo.librewolf.net/pubkey.gpg",
+      "uris": "https://repo.librewolf.net",
+      "suites": "librewolf",
+      "components": "main",
+      "packages": ["librewolf"]
+    }
+  ]
+}

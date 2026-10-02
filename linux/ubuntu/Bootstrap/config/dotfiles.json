@@ -1,0 +1,63 @@
+{
+  "repository": "https://github.com/PicoLuetjens/dotfiles.git",
+  "clonePath": "{Home}/dotfiles",
+
+  "items":
+  [
+    {
+      "name": "Zsh",
+      "source": ".zshrc",
+      "target": "{Home}/.zshrc"
+    },
+    {
+      "name": "Powerlevel10k",
+      "source": ".p10k.zsh",
+      "target": "{Home}/.p10k.zsh",
+      "optional": true
+    },
+    {
+      "name": "Kitty",
+      "source": "kitty",
+      "target": "{ConfigHome}/kitty"
+    },
+    {
+      "name": "Superfile Config",
+      "source": "superfile/config.toml",
+      "target": "{ConfigHome}/superfile/config.toml"
+    },
+    {
+      "name": "Superfile Hotkeys",
+      "source": "superfile/hotkeys.toml",
+      "target": "{ConfigHome}/superfile/hotkeys.toml"
+    },
+    {
+      "name": "Superfile toggleDotFile",
+      "source": "superfile/toggleDotFile",
+      "target": "{DataHome}/superfile/toggleDotFile"
+    },
+    {
+      "name": "Superfile toggleFooter",
+      "source": "superfile/toggleFooter",
+      "target": "{DataHome}/superfile/toggleFooter"
+    },
+    {
+      "name": "Neovim",
+      "source": "nvim",
+      "target": "{ConfigHome}/nvim"
+    },
+    {
+      "name": "LibreWolf Policies",
+      "source": "mf-base/policies.json",
+      "target": "/etc/librewolf/policies/policies.json",
+      "base": "/usr/share/librewolf/distribution/policies.json",
+      "mode": "merge-json",
+      "sudo": true,
+      "requires": "/usr/share/librewolf"
+    }
+  ],
+
+  "manual":
+  [
+    "Tabliss: In LibreWolf Tabliss-Einstellungen öffnen -> Import -> {ClonePath}/mf-base/tabliss.json"
+  ]
+}
