@@ -1,0 +1,46 @@
+{
+  "repository": "https://github.com/PicoLuetjens/dotfiles.git",
+  "clonePath": "{Home}/dotfiles",
+
+  "items":
+  [
+    {
+      "name": "Zsh",
+      "source": ".zshrc",
+      "target": "{Home}/.zshrc"
+    },
+    {
+      "name": "Powerlevel10k",
+      "source": ".p10k.zsh",
+      "target": "{Home}/.p10k.zsh",
+      "optional": true
+    },
+    {
+      "name": "iTerm2 Profil",
+      "source": "iterm2/pico.json",
+      "target": "{AppSupport}/iTerm2/DynamicProfiles/pico.json"
+    },
+    {
+      "name": "Superfile",
+      "source": "superfile",
+      "target": "{AppSupport}/superfile"
+    },
+    {
+      "name": "Neovim",
+      "source": "nvim",
+      "target": "{ConfigHome}/nvim"
+    },
+    {
+      "name": "LibreWolf Policies",
+      "source": "mf-base/policies.json",
+      "target": "/Applications/LibreWolf.app/Contents/Resources/distribution/policies.json",
+      "mode": "merge-json",
+      "requires": "/Applications/LibreWolf.app"
+    }
+  ],
+
+  "manual":
+  [
+    "Tabliss: In LibreWolf Tabliss-Einstellungen öffnen -> Import -> {ClonePath}/mf-base/tabliss.json"
+  ]
+}

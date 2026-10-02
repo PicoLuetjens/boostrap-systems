@@ -1,0 +1,119 @@
+{
+  "software": [
+    {
+      "name": "Git",
+      "type": "brew",
+      "packages": ["git"]
+    },
+    {
+      "name": "iTerm2",
+      "type": "cask",
+      "packages": ["iterm2"],
+      "check_path": "/Applications/iTerm.app"
+    },
+    {
+      "name": "Oh My Zsh",
+      "type": "script",
+      "url": "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh",
+      "args": ["--unattended", "--keep-zshrc"],
+      "check_path": "{home}/.oh-my-zsh/oh-my-zsh.sh"
+    },
+    {
+      "name": "Powerlevel10k",
+      "type": "git",
+      "url": "https://github.com/romkatv/powerlevel10k.git",
+      "dest": "{home}/.oh-my-zsh/custom/themes/powerlevel10k"
+    },
+    {
+      "name": "zsh-autosuggestions",
+      "type": "git",
+      "url": "https://github.com/zsh-users/zsh-autosuggestions.git",
+      "dest": "{home}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
+    },
+    {
+      "name": "zsh-syntax-highlighting",
+      "type": "git",
+      "url": "https://github.com/zsh-users/zsh-syntax-highlighting.git",
+      "dest": "{home}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
+    },
+    {
+      "name": "Jetbrains Nerdfont",
+      "type": "cask",
+      "packages": ["font-jetbrains-mono-nerd-font"]
+    },
+    {
+      "name": "Only Office",
+      "type": "cask",
+      "packages": ["onlyoffice"],
+      "check_path": "/Applications/ONLYOFFICE.app"
+    },
+    {
+      "name": "7-Zip",
+      "type": "brew",
+      "packages": ["sevenzip"]
+    },
+    {
+      "name": "Discord",
+      "type": "cask",
+      "packages": ["discord"],
+      "check_path": "/Applications/Discord.app"
+    },
+    {
+      "name": "Docker Desktop",
+      "type": "cask",
+      "packages": ["docker-desktop"],
+      "check_path": "/Applications/Docker.app"
+    },
+    {
+      "name": "Superfile",
+      "type": "brew",
+      "packages": ["superfile"]
+    },
+    {
+      "name": "Neovim",
+      "type": "brew",
+      "packages": ["neovim"]
+    },
+    {
+      "name": "ripgrep",
+      "type": "brew",
+      "packages": ["ripgrep"]
+    },
+    {
+      "name": "Treesitter",
+      "type": "brew",
+      "packages": ["tree-sitter-cli"]
+    },
+    {
+      "name": "UV",
+      "type": "brew",
+      "packages": ["uv"]
+    },
+    {
+      "name": "Python",
+      "type": "brew",
+      "packages": ["python@3.14"]
+    },
+    {
+      "name": "Volta",
+      "type": "brew",
+      "packages": ["volta"]
+    },
+    {
+      "name": "Go",
+      "type": "brew",
+      "packages": ["go"]
+    },
+    {
+      "name": "Just",
+      "type": "brew",
+      "packages": ["just"]
+    },
+    {
+      "name": "Librewolf",
+      "type": "cask",
+      "packages": ["librewolf"],
+      "check_path": "/Applications/LibreWolf.app"
+    }
+  ]
+}
